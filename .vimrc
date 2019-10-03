@@ -9,6 +9,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'ragon000/vim-latex-live-preview'
+
 call vundle#end()
 
 filetype plugin indent on
@@ -22,3 +24,5 @@ set incsearch
 set rnu
 set laststatus=2
 set t_Co=256
+let g:livepreview_previewer = 'mupdf'
+
