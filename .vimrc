@@ -9,7 +9,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'ryanoasis/vim-devicons'
-Plugin 'ragon000/vim-latex-live-preview'
+Plugin 'tpope/vim-eunuch'
 
 call vundle#end()
 
