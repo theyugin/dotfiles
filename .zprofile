@@ -3,7 +3,6 @@ if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]
 	exec startx
 fi
 
-export TERM=screen-256color
 export EDITOR=vim
 export SSH_AUTH_SOCK DEFAULT="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 
