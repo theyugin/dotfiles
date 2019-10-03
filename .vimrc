@@ -24,5 +24,3 @@ set incsearch
 set rnu
 set laststatus=2
 set t_Co=256
-let g:livepreview_previewer = 'mupdf'
-
