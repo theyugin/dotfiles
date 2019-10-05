@@ -14,6 +14,7 @@ Plugin 'tpope/vim-eunuch'
 call vundle#end()
 
 filetype plugin indent on
+autocmd InsertEnter,InsertLeave * set cul!
 
 syntax on
 set noswapfile
