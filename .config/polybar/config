@@ -30,20 +30,17 @@ alert = #bd2c40
 [bar/main]
 monitor = ${env:MONITOR:HDMI-0}
 width = 100%
-height = 25
+height = 18
 fixed-center = false
 bottom = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
-line-color = #f00
-
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = monospace:pixelsize=11;1
+font-0 = monospace:pixelsize=11;3
 
 modules-left = i3 xwindow
 modules-right = mpd filesystem pulseaudio xkeyboard date powermenu
@@ -75,7 +72,7 @@ label = %title:0:40:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-underline = ${colors.secondary}
 
@@ -99,42 +96,43 @@ label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/i3]
 type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
+format = <label-state><label-mode>
 
-; Only show workspaces on the same output as the bar
-pin-workspaces = true
+index-sort = false
+enable-click = true 
+enable-scroll = false
+ws-icon-0 = 10;0[]
+ws-icon-1 = 1;1  
+ws-icon-2 = 2;2 
+ws-icon-3 = 3;3 
+ws-icon-4 = 4;4 ♪
+ws-icon-5 = 5;5 
+ws-icon-6 = 6;6 
+ws-icon-7 = 7;7
+ws-icon-8 = 8;8
+ws-icon-9 = 9;9
+ws-icon-default =
 
-label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+pin-workspaces = true 
 
-; focused = Active workspace on focused monitor
-label-focused = %index%
+label-mode = " %mode% "
+label-mode-background = ${colors.background}
+
+label-focused = %{F#02adff B#0B0F10}%{F-} %icon% %{B#02adff F#0B0F10}%{F-}
+label-focused-foreground = ${colors.foreground}
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
 
+label-visible = " %icon% "
+label-visible-foreground = ${colors.foreground}
+label-visible-background = #02adff
 
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
-label-unfocused-padding = 2
+label-unfocused = " %icon% "
+label-unfocused-foreground = #0B0F10
+label-unfocused-background = #02adff
 
-; visible = Active workspace on unfocused monitor
-label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
-
-; urgent = Workspace with urgency hint set
-label-urgent = %index%
+label-urgent = " %icon% "
+label-urgent-foreground = ${colors.foreground}
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-; Separator in between workspaces
-; label-separator = |
-
 
 [module/mpd]
 type = internal/mpd
@@ -150,13 +148,11 @@ label-song-ellipsis = true
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 1
 
-date =
-date-alt = " %Y-%m-%d"
+date = " %Y-%m-%d"
 
-time = %H:%M
-time-alt = %H:%M:%S
+time = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
