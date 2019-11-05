@@ -1,0 +1,11 @@
+[Unit]
+Description=Shadowsocks service
+
+[Service]
+Type=simple
+ExecStart=ss-local -c %h/.config/shadowsocks.json
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target
