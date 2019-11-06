@@ -30,6 +30,8 @@ xbanish & disown
 # xrandr --output DVI-I-1 --mode 1920x1080 --pos 1920x0
 
 
+setxkbmap -layout us,ru -option grp:alt_shift_toggle -option ctrl:nocaps
+
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
   [ -x "$f" ] && . "$f"
