@@ -1,9 +1,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/yugin/.oh-my-zsh"
 
-ZSH_THEME="gentoo"
+ZSH_THEME="wezm"
 
-CASE_SENSITIVE="true"
+CASE_SENSITIVE="false"
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS=true
