@@ -30,7 +30,9 @@ set rnu
 set laststatus=2
 set t_Co=256
 set clipboard=unnamedplus
-let g:airline_theme = 'base16_default'
+set ignorecase
+set smartcase
+let g:airline_theme = 'base16_tomorrow'
 let g:tmuxline_powerline_separators = 0
 let g:tmuxline_preset = {
       \'a'    : '#S',
