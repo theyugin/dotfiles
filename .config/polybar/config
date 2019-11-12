@@ -33,15 +33,6 @@ base0C = "8abeb7"
 base0D = "81a2be"
 base0E = "b294bb"
 base0F = "a3685a"
-;background = ${xrdb:color0:#222}
-background = #222
-background-alt = #444
-;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
 
 [bar/main]
 monitor = ${env:MONITOR:HDMI-0}
