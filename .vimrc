@@ -7,15 +7,14 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
-" Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'tpope/vim-eunuch'
-" Plugin 'Valloric/YouCompleteMe'
 Plugin 'dense-analysis/ale'
 Plugin 'chriskempson/base16-vim'
+Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()
 
@@ -43,6 +42,7 @@ set clipboard=unnamedplus 	" unified with X clipboard
 set ignorecase			" case shit for search
 set smartcase
 
+" ale shenanigans
 let g:ale_sign_error = ''
 let g:ale_sign_warning = ''
 " some airline/tmuxline themes n shiet
