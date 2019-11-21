@@ -1,0 +1,11 @@
+{
+	"server": "{ss-server-address}",
+	"server_port": "{ss-server-port}",
+	"local_address": "127.0.0.1",
+	"local_port": "1080",
+	"password": "{ss-server-password}",
+	"timeout": 300,
+	"method": "xchacha20-ietf-poly1305",
+	"plugin": "obfs-local",
+	"plugin_opts": "obfs=tls;fast-open;failover=kremlin.ru:443"
+}
