@@ -42,6 +42,11 @@ set clipboard=unnamedplus 	" unified with X clipboard
 set ignorecase			" case shit for search
 set smartcase
 
+" different cursor shapes for different modes
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>[6 q\<Esc>\\"
+let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>[4 q\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>[2 q\<Esc>\\"
+
 " ale shenanigans
 let g:ale_sign_error = ''
 let g:ale_sign_warning = ''
