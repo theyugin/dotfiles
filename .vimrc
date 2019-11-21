@@ -50,6 +50,10 @@ let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>[2 q\<Esc>\\"
 let g:ale_sign_error = ''
 let g:ale_sign_warning = ''
 " some airline/tmuxline themes n shiet
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
 let g:airline_symbols.maxlinenr = ''
 let g:airline_theme = 'base16_tomorrow'
 let g:tmuxline_powerline_separators = 0
