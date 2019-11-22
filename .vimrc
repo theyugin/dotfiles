@@ -5,15 +5,16 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'ryanoasis/vim-devicons'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'edkolev/tmuxline.vim'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'dense-analysis/ale'
 Plugin 'chriskempson/base16-vim'
-Plugin 'davidhalter/jedi-vim'
+Plugin 'prabirshrestha/async.vim'
+Plugin 'prabirshrestha/vim-lsp'
+Plugin 'ryanolsonx/vim-lsp-python'
 
 call vundle#end()
 
