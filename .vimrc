@@ -40,6 +40,7 @@ set t_Co=256
 set clipboard=unnamedplus 	" unified with X clipboard
 set ignorecase			" case shit for search
 set smartcase
+set wildmenu            " display a menu for command auto-completion
 
 " different cursor shapes for different modes
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>[6 q\<Esc>\\"
@@ -54,6 +55,7 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
+let g:airline#extensions#tabline#enabled = 1
 let g:airline_symbols.maxlinenr = ''
 let g:airline_theme = 'base16_tomorrow'
 let g:tmuxline_powerline_separators = 0
