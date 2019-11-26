@@ -12,9 +12,10 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'chriskempson/base16-vim'
+Plugin 'prabirshrestha/asyncomplete.vim'
 Plugin 'prabirshrestha/async.vim'
 Plugin 'prabirshrestha/vim-lsp'
-Plugin 'ryanolsonx/vim-lsp-python'
+Plugin 'prabirshrestha/asyncomplete-lsp.vim'
 
 call vundle#end()
 
@@ -22,6 +23,16 @@ filetype plugin indent on
 
 colorscheme base16-tomorrow-night
 syntax on
+
+" python lsp setup
+if executable('pyls')
+    " pip install python-language-server
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ })
+endif
 
 set autoindent			" autoindent duh
 set shiftround 			" round indent to multime of 'shiftwidth'
