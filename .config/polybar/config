@@ -48,6 +48,12 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = monospace:pixelsize=11;3
+font-1 = Sarasa Term J:pixelsize=11;3
+font-2 = Sarasa Term K:pixelsize=11;3
+font-3 = Sarasa Term CL:pixelsize=11;3
+font-4 = Sarasa Term TC:pixelsize=11;3
+font-5 = Sarasa Term SC:pixelsize=11;3
+font-6 = Sarasa Term HC:pixelsize=11;3
 
 modules-left = i3
 modules-right = mpd filesystem pulseaudio xkeyboard date powermenu
@@ -146,7 +152,7 @@ icon-play = 契
 icon-pause = 
 icon-next = 怜
 label-song-minlen = 40
-label-song-maxlen = 40
+label-song-maxlen = 70
 label-song-ellipsis = true
 
 [module/date]
@@ -167,7 +173,7 @@ type = internal/pulseaudio
 format-volume = <label-volume> <bar-volume>
 label-volume = VOL %percentage%%
 
-label-muted = 🔇 muted
+label-muted = ﱝ muted
 label-muted-foreground = ${colors.base03}
 
 bar-volume-width = 10
