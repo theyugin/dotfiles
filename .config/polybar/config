@@ -37,7 +37,7 @@ base0F = "a3685a"
 [bar/main]
 monitor = ${env:MONITOR:HDMI-0}
 width = 100%
-height = 18
+height = 20
 fixed-center = false
 bottom = true
 
@@ -47,13 +47,13 @@ foreground = ${colors.base04}
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = monospace:pixelsize=11;3
-font-1 = Sarasa Term J:pixelsize=11;3
-font-2 = Sarasa Term K:pixelsize=11;3
-font-3 = Sarasa Term CL:pixelsize=11;3
-font-4 = Sarasa Term TC:pixelsize=11;3
-font-5 = Sarasa Term SC:pixelsize=11;3
-font-6 = Sarasa Term HC:pixelsize=11;3
+font-0 = monospace:pixelsize=12;3
+font-1 = Sarasa Term J:pixelsize=12;3
+font-2 = Sarasa Term K:pixelsize=12;3
+font-3 = Sarasa Term CL:pixelsize=12;3
+font-4 = Sarasa Term TC:pixelsize=12;3
+font-5 = Sarasa Term SC:pixelsize=12;3
+font-6 = Sarasa Term HC:pixelsize=12;3
 
 modules-left = i3
 modules-right = mpd filesystem pulseaudio xkeyboard date powermenu
