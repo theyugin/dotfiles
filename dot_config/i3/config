@@ -1,11 +1,26 @@
 set $mod Mod4
 
-# class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+###############################
+#### Gruvbox Material Dark ####
+###############################
+set $bg        #282828
+set $lightgray #a89984
+set $fg        #d4be98
+set $red       #ea6962
+set $orange    #e78a4e
+set $green     #a9b665
+set $blue      #7daea3
+set $purple    #d3869b
+set $aqua      #89b482
+set $darkgray  #282828
+
+# class                 border      bground     text    indicator   child_border
+client.focused          $aqua       $aqua       $bg     $orange     $aqua
+client.focused_inactive $lightgray  $lightgray  $bg     $lightgray  $lightgray
+client.unfocused        $bg         $bg         $bg     $bg         $bg
+client.urgent           $red        $red        $bg     $red        $red
+client.placeholder      $bg         $bg         $bg     $bg         $bg
+client.background       $bg
 
 default_border pixel 3
 for_window [class="TelegramDesktop"] border pixel 3
@@ -13,11 +28,11 @@ for_window [class="flameshot"] floating enable
 for_window [class="mpv"] floating enable
 client.background       #F8F8F2
 
-font pango:monospace 10
+font pango:monospace 9
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id i3-volume -npyx 100 up 5
-bindsym XF86AudioLowerVolume exec --no-startup-id i3-volume -npyx 100 down 5
-bindsym XF86AudioMute exec --no-startup-id i3-volume -npyx 100 mute
+bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/.local/scripts/i3-volume -npyPx 100 up 5
+bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/.local/scripts/i3-volume -npyPx 100 down 5
+bindsym XF86AudioMute exec --no-startup-id $HOME/.local/scripts/i3-volume -npyPx 100 mute
 
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioStop exec --no-startup-id playerctl stop
@@ -33,10 +48,10 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # launcher
-bindsym $mod+d exec "rofi -combi-modi drun,window -show combi"
-
+bindsym $mod+d exec "rofi -combi-modi drun,window,run -show combi -show-icons -icon-theme Gruvbox"
 # screenshoter
 bindsym $mod+Shift+s exec "flameshot gui"
+bindsym $mod+Print exec "flameshot screen -c"
 
 # calc
 bindsym $mod+Shift+i exec "rofi -show calc"
@@ -94,17 +109,19 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+set $main DP-4
+set $second HDMI-0
 # assigning to outputs
-workspace $ws1 output DP-0
-workspace $ws2 output DP-0
-workspace $ws3 output DP-0
-workspace $ws4 output DP-0
-workspace $ws5 output DP-0
-workspace $ws6 output DVI-D-1
-workspace $ws7 output DVI-D-1
-workspace $ws8 output DVI-D-1
-workspace $ws9 output DVI-D-1
-workspace $ws10 output DVI-D-1
+workspace $ws1 output $main
+workspace $ws2 output $main
+workspace $ws3 output $main 
+workspace $ws4 output $main
+workspace $ws5 output $main
+workspace $ws6 output $second
+workspace $ws7 output $second
+workspace $ws8 output $second
+workspace $ws9 output $second
+workspace $ws10 output $second
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -137,6 +154,7 @@ bindsym $mod+Shift+r restart
 
 # autostart section
 exec --no-startup-id nm-applet
+exec --no-startup-id udiskie
 
 
 set $mode_system system: (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
@@ -169,15 +187,17 @@ bindsym $mod+r mode "resize"
 
 bar {
     colors {
-      background #282A36
-      statusline #F8F8F2
-      separator  #44475A
+        # bar background color
+        background $bg
+        # text color used for blocks that do not have a color specified.
+        statusline $fg
 
-      focused_workspace  #6272A4 #6272A4 #F8F8F2
-      active_workspace   #282A36 #44475A #F8F8F2
-      inactive_workspace #282A36 #282A36 #BFBFBF
-      urgent_workspace   #FF5555 #FF5555 #F8F8F2
-      binding_mode       #FF5555 #FF5555 #F8F8F2
+        # workspaces section
+        #                    border     backgr.     text
+        focused_workspace    $aqua      $aqua       $bg
+        inactive_workspace   $bg        $lightgray  $bg
+        active_workspace     $bg        $blue       $bg
+        urgent_workspace     $red       $red        $fg
     }
     tray_output primary
     status_command i3blocks

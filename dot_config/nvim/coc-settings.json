@@ -1,5 +1,0 @@
-{
-    "lua.version": "Lua 5.4",
-    "lua.useSumnekoLs": true,
-    "python.jediEnabled": false
-}

@@ -1,30 +1,30 @@
 [mediaplayer]
 color="#f8f8f2"
-command=./scripts/mediaplayer
+command=$HOME/.local/scripts/i3-mediaplayer
 instance='spotify'
 interval=1
 signal=10
 
 [cpu_util_detailed]
-command=./scripts/cpu_util_detailed
+command=$HOME/.local/scripts/i3-cpu
 label=CPU
 markup=pango
-interval=repeat
+interval=5
 
 [memory]
-command=./scripts/memory
+command=$HOME/.local/scripts/i3-memory
 label=MEM 
 interval=5
 
 [memory]
-command=./scripts/memory
+command=$HOME/.local/scripts/i3-memory
 label=SWAP 
 interval=5
 instance=swap
 
 [i3-volume]
-command=i3-volume output "%i %v\n" -t i3blocks -u 10
-interval=repeat
+command=$HOME/.local/scripts/i3-volume output i3blocks
+interval=once
 signal=10
 color="#f8f8f2"
 separator_block_width=10
