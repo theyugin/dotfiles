@@ -1,0 +1,7 @@
+font=monospace
+default-timeout=5000
+anchor=bottom-right
+outer-margin=20,10
+background-color=#282828
+border-color=#98971a
+text-color=#ebdbb2

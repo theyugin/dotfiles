@@ -1,0 +1,69 @@
+{
+  "position": "bottom",
+  "height": 30,
+  "spacing": 5,
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/submap",
+    "mpris"
+  ],
+  "modules-center": ["hyprland/window"],
+  "modules-right": [
+    "custom/weather",
+    "cpu",
+    "memory",
+    "hyprland/language",
+    "clock",
+    "tray",
+    "custom/power"
+  ],
+  "hyprland/workspaces": {
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1"
+  },
+  "hyprland/submap": {
+    "format": "<span style=\"italic\">{}</span>"
+  },
+  "mpris": {
+    "format": "{artist} - {title}",
+    "ignored-players": ["firefox"]
+  },
+  "hyprland/window": {
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1"
+  },
+  "custom/weather": {
+    "interval": 600,
+    "exec": "curl -s 'wttr.in/Yekaterinburg?format=3'"
+  },
+  "cpu": {
+    "format": "{usage}%  ",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "{}%  "
+  },
+  "hyprland/language": {
+    "format-en": "en",
+    "format-ru": "ru"
+  },
+  "clock": {
+    "format": "{:%H:%M:%S}",
+    "interval": 1,
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}"
+  },
+  "tray": {
+    "spacing": 10
+  },
+  "custom/power": {
+    "format": "⏻ ",
+    "tooltip": false,
+    "menu": "on-click",
+    "menu-file": "~/.config/waybar/power-menu.xml",
+    "menu-actions": {
+      "shutdown": "systemctl poweroff",
+      "reboot": "systemctl reboot"
+    }
+  }
+}
