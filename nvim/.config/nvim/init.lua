@@ -34,10 +34,10 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.diagnostic.config({
 	update_in_insert = false,
 	severity_sort = true,
-	float = { border = "rounded", source = "if_many" },
+	float = { border = "rounded", source = true },
 	underline = { severity = vim.diagnostic.severity.ERROR },
 
-	virtual_text = true,
+	virtual_text = { source = true },
 	virtual_lines = false,
 
 	jump = { float = true },
@@ -258,16 +258,22 @@ require("lazy").setup({
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 			local servers = {
-				-- clangd = {},
-				-- gopls = {},
-				basedpyright = {},
-				-- rust_analyzer = {},
-				-- ts_ls = {},
+				basedpyright = {
+					settings = {
+						basedpyright = {
+							analysis = {
+								typeCheckingMode = "off",
+							},
+						},
+					},
+				},
 			}
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
 				"lua_ls",
 				"stylua",
+				"ruff",
+				"mypy",
 			})
 
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
@@ -330,6 +336,21 @@ require("lazy").setup({
 				python = { "ruff_fix", "ruff_organize_imports", "ruff_format" },
 			},
 		},
+	},
+	{
+		"mfussenegger/nvim-lint",
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			local lint = require("lint")
+			lint.linters_by_ft = {
+				python = { "ruff", "dmypy" },
+			}
+			vim.api.nvim_create_autocmd({ "BufReadPost", "BufWritePost" }, {
+				callback = function()
+					lint.try_lint()
+				end,
+			})
+		end,
 	},
 
 	{
